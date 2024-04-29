@@ -28,7 +28,7 @@ local entity = Spawner.createEntity({
         Values = {1.5, 20, 0.1, 1},
         Range = 100
     },
-    ResistCrucifix = false,
+    ResistCrucifix = true,
     BreakCrucifix = true,
     DeathMessage = {"you die to A-35", "yee."},
     IsCuriousLight = true
