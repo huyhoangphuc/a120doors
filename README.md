@@ -1,60 +1,80 @@
-local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+---====== Define spawner ======---
 
--- Create entity
-local entity = Creator.createEntity({
-    CustomName = "A-120", -- Custom name of your entity
-    Model = "https://github.com/tonyBflako/vynixusdoors/blob/main/A120edit.rbxm?raw=true", -- Can be GitHub file or rbxassetid
-    Speed = 30, -- Percentage, 100 = default Rush speed
-    DelayTime = 2, -- Time before starting cycles (seconds)
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/a120doors/main/jghgifgy"))()
+
+---====== Create entity ======---
+
+local entity = Spawner.createEntity({
+    CustomName = "A-120",
+    Model = "https://github.com/tonyBflako/vynixusdoors/blob/main/A120edit.rbxm?raw=true", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Speed = 30,
+    MoveDelay = 2,
     HeightOffset = 0,
     CanKill = true,
     KillRange = 50,
-    BreakLights = false,
-    BackwardsMovement = true,
+    SpawnInFront = true,
+    ShatterLights = false,
     FlickerLights = {
-        false, -- Enabled/Disabled
-        1, -- Time (seconds)
+        Enabled = true,
+        Duration = 1
     },
     Cycles = {
         Min = 1,
         Max = 4,
-        WaitTime = 2,
+        Delay = 2
     },
     CamShake = {
-        false, -- Enabled/Disabled
-        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
-        100, -- Shake start distance (from Entity to you)
+        Enabled = true,
+        Values = {1.5, 20, 0.1, 1},
+        Range = 100
     },
-    Jumpscare = {
-        false, -- Enabled/Disabled
-        {
-            Image1 = "rbxassetid://10483855823", -- Image1 url
-            Image2 = "rbxassetid://10483999903", -- Image2 url
-            Shake = true,
-            Sound1 = {
-                10483790459, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Sound2 = {
-                10483837590, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Flashing = {
-                true, -- Enabled/Disabled
-                Color3.fromRGB(255, 255, 255), -- Color
-            },
-            Tease = {
-                true, -- Enabled/Disabled
-                Min = 1,
-                Max = 3,
-            },
-        },
-    },
-    CustomDialog = {"You can", "put your", "custom death", "message here."}, -- Custom death message
+    ResistCrucifix = false,
+    BreakCrucifix = true,
+    DeathMessage = {"you die to A-10", "yee."},
+    IsCuriousLight = true
 })
 
------[[ Advanced ]]-----
-entity.Debug.OnEntitySpawned = function(entityTable)
+---====== Debug ======---
+
+entity.Debug.OnEntitySpawned = function()
+    print("Entity has spawned")
+end
+
+entity.Debug.OnEntityDespawned = function()
+    print("Entity has despawned")
+end
+
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity finished rebound")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function()
+    print("Player looking at entity")
+end
+
+entity.Debug.OnDeath = function()
+    print("Player has died")
+end
+
+--[[
+    NOTE: By overwriting 'OnUseCrucifix', the default crucifixion will be ignored and this function will be called instead
+
+    entity.Debug.OnUseCrucifix = function()
+        print("Custom crucifixion script here")
+    end
+]]--
+
+---====== Run entity ======---
+
+Spawner.runEntity(entity)entity.Debug.OnEntitySpawned = function(entityTable)
     print("Entity has spawned:", entityTable.Model)
 end
 
