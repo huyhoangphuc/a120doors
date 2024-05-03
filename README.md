@@ -5,13 +5,13 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/huyho
 ---====== Create entity ======---
 
 local entity = Spawner.createEntity({
-    CustomName = "A-200",
-    Model = "rbxassetid://11514030098", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
-    Speed = 100,
+    CustomName = "A-100",
+    Model = "rbxassetid://2162785734", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Speed = 0,
     MoveDelay = 2,
     HeightOffset = 0,
     CanKill = true,
-    KillRange = 50,
+    KillRange = 3,
     SpawnInFront = false,
     ShatterLights = false,
     FlickerLights = {
@@ -19,8 +19,8 @@ local entity = Spawner.createEntity({
         Duration = 1
     },
     Cycles = {
-        Min = 4,
-        Max = 4,
+        Min = 0,
+        Max = 0,
         Delay = 2
     },
     CamShake = {
