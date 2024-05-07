@@ -13,7 +13,7 @@ local entity = spawner.Create({
 	Lights = {
 		Flicker = {
 			Enabled = true,
-			Duration = 5
+			Duration = 1
 		},
 		Shatter = true,
 		Repair = false
@@ -24,14 +24,14 @@ local entity = spawner.Create({
 		Values = {1.5, 20, 0.1, 1}
 	},
 	Movement = {
-		Speed = 1000,
-		Delay = 5,
+		Speed = 60,
+		Delay = 2,
 		Reversed = false
 	},
 	Rebounding = {
 		Enabled = true,
 		Type = "Blitz",
-		Min = 10,
+		Min = 2,
 		Max = math.random(1, 2),
 		Delay = math.random(10, 30) / 10
 	},
