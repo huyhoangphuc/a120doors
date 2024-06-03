@@ -11,7 +11,7 @@ local entity = Spawner.createEntity({
     MoveDelay = 0,
     HeightOffset = 0,
     CanKill = true,
-    KillRange = 50,
+    KillRange = 100000,
     SpawnInFront = false,
     ShatterLights = false,
     FlickerLights = {
@@ -29,7 +29,7 @@ local entity = Spawner.createEntity({
         Range = 100
     },
     ResistCrucifix = false,
-    BreakCrucifix = true,
+    BreakCrucifix = false,
     DeathMessage = {"you die to A-60", "yee."},
     IsCuriousLight = true
 })
