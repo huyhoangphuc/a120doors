@@ -75,4 +75,3 @@ end
 ---====== Run entity ======---
 
 Spawner.runEntity(entity)
-end
