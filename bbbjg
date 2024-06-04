@@ -1,3 +1,4 @@
+while true do 
 wait(20)
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/a120doors/main/jghgifgy"))()
@@ -75,3 +76,4 @@ end
 ---====== Run entity ======---
 
 Spawner.runEntity(entity)
+end
