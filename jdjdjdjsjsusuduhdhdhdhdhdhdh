@@ -1,11 +1,14 @@
 if  game.ReplicatedStorage.GameData.LatestRoom.Value ~= 50 then
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 else
-Wait(1)
+Wait(0.1)
 end
 
 game.Workspace:FindFirstChild("Frostbite"):Destroy()
-
+wait(0.1)
+game.Workspace:FindFirstChild("Frostbite"):Destroy()
+wait(0.1)
+game.Workspace:FindFirstChild("Frostbite"):Destroy()
 wait(1)
 game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(0, 0, 255)
 game.Lighting.MainColorCorrection.Contrast = 1
