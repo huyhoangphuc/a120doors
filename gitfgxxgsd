@@ -1,6 +1,4 @@
-wait(5)
-game.Workspace:FindFirstChild("Frostbite"):Destroy()
-
+wait(1)
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/a120doors/main/jghgifgy"))()
 
 ---====== Create entity ======---
@@ -26,9 +24,9 @@ TW:Play()
 local entity = Spawner.createEntity({
     CustomName = "Frostbite",
     Model = "rbxassetid:////12777158706", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
-    Speed = 0,
-    MoveDelay = 5,
-    HeightOffset = 4,
+    Speed = 10000,
+    MoveDelay = 1,
+    HeightOffset = 20,
     CanKill = false,
     KillRange = 10,
     SpawnInFront = true,
@@ -38,8 +36,8 @@ local entity = Spawner.createEntity({
         Duration = 3
     },
     Cycles = {
-        Min = 1,
-        Max = 1,
+        Min = 100,
+        Max = 100,
         Delay = 0
     },
     CamShake = {
@@ -68,7 +66,8 @@ entity.Debug.OnEntityStartMoving = function()
 end
 
 entity.Debug.OnEntityFinishedRebound = function()
-    print("Entity finished rebound")
+    wait(3)
+    game.Players.LocalPlayer.Character.Humanoid:TakeDamage(5)
 end
 
 entity.Debug.OnEntityEnteredRoom = function(room)
