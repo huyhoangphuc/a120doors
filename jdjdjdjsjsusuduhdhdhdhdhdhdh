@@ -9,8 +9,8 @@ wait(0.1)
 game.Workspace:FindFirstChild("Frostbite"):Destroy()
 wait(0.1)
 game.Workspace:FindFirstChild("Frostbite"):Destroy()
-wait(1)
-game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(0, 0, 255)
+
+game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(255, 255, 255)
 game.Lighting.MainColorCorrection.Contrast = 1
 local tween = game:GetService("TweenService")
 tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(2.5), {Contrast = 0}):Play()
