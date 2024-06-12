@@ -56,10 +56,8 @@ local entity = Spawner.createEntity({
 ---====== Debug ======---
 
 entity.Debug.OnEntitySpawned = function()
-    wait(3)
-    game.Players.LocalPlayer.Character.Humanoid:TakeDamage(5)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/a120doors/main/jdjdjdjsjsusuduhdhdhdhdhdhdh"))()
 end
-
 entity.Debug.OnEntityDespawned = function()
     game.Players.LocalPlayer.Character.Humanoid:TakeDamage(1)
 end
@@ -73,13 +71,6 @@ entity.Debug.OnEntityFinishedRebound = function()
 end
 
 entity.Debug.OnEntityEnteredRoom = function(room)
-    if  game.ReplicatedStorage.GameData.LatestRoom.Value ~= 50 then
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-else
-Wait(1)
-end
-
-game.Workspace:FindFirstChild("Frostbite"):Destroy()
 end
 
 entity.Debug.OnLookAtEntity = function()
