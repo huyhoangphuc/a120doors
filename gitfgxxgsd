@@ -56,7 +56,8 @@ local entity = Spawner.createEntity({
 ---====== Debug ======---
 
 entity.Debug.OnEntitySpawned = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/a120doors/main/jdjdjdjsjsusuduhdhdhdhdhdhdh"))()
+    wait(2)
+    game.Players.LocalPlayer.Character.Humanoid:TakeDamage(5)
 end
 entity.Debug.OnEntityDespawned = function()
     game.Players.LocalPlayer.Character.Humanoid:TakeDamage(1)
