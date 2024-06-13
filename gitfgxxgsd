@@ -45,7 +45,7 @@ entity.Debug.OnEntityStartMoving = function()
 end
 
 entity.Debug.OnEntityFinishedRebound = function()
-    game.Players.LocalPlayer.Character.Humanoid:TakeDamage(5)
+    game.Players.LocalPlayer.Character.Humanoid:TakeDamage(10)
 end
 
 entity.Debug.OnEntityEnteredRoom = function(room)
